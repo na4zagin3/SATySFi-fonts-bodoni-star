@@ -1,0 +1,28 @@
+(version 0.0.2)
+(library
+  (name "fonts-bodoni-star")
+  (version "2.3")
+  (sources
+    ((hash "fonts.satysfi-hash" "fonts.satysfi-hash")
+(fontDir "Bodoni-master/fonts/otf")
+(file "AUTHORS.txt" "Bodoni-master/AUTHORS.txt")
+(file "CONTRIBUTORS.txt" "Bodoni-master/CONTRIBUTORS.txt")
+(file "DESCRIPTION.en_us.html" "Bodoni-master/DESCRIPTION.en_us.html")
+(file "FONTLOG.txt" "Bodoni-master/FONTLOG.txt")
+(file "LICENSE.md" "Bodoni-master/LICENSE.md")
+(file "OFL.txt" "Bodoni-master/OFL.txt")
+(file "README.md" "Bodoni-master/README.md")
+	 ))
+  (opam "satysfi-fonts-bodoni-star.opam"))
+
+(libraryDoc
+  (name "fonts-bodoni-star-doc")
+  (version "2.3")
+  (build
+    ((satysfi "specimen.saty" "-o" "specimen.pdf")))
+  (sources
+    ((doc "specimen.pdf" "./specimen.pdf")))
+  (opam "satysfi-fonts-bodoni-star-doc.opam")
+  (dependencies
+   ((fonts-bodoni-star ())
+    (lipsum ()))))

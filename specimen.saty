@@ -1,0 +1,103 @@
+@require: stdjabook
+@require: code
+@require: itemize
+
+@require: lipsum/lipsum
+
+let-inline ctx \set-non-cjk-font name it =
+  let ctx =
+    ctx |> set-font Latin (name, 1., 0.)
+        |> set-font OtherScript (name, 1., 0.)
+  in
+  read-inline ctx it
+
+let-block +specimen font-name name = '<
+    +p {
+      \set-non-cjk-font(font-name){
+        #name;
+      }
+    }
+    +p {
+      \set-non-cjk-font(font-name){
+        ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+        \lipsum(1);
+      }
+    }
+  >
+
+in
+
+document (|
+  title = {\SATySFi;-fonts-bodoni-star};
+  author = {\@na4zagin3};
+  show-title = true;
+  show-toc = false;
+|) '<
+  +p {
+    このパッケージはBodoni\*フォント\code(`https://github.com/indestructible-type/Bodoni`);を提供する。
+  }
++specimen(`fonts-bodoni-star:Bodoni-06-Bold-Italic`){Bodoni-06-Bold-Italic}
++specimen(`fonts-bodoni-star:Bodoni-06-Bold`){Bodoni-06-Bold}
++specimen(`fonts-bodoni-star:Bodoni-06-Book-Italic`){Bodoni-06-Book-Italic}
++specimen(`fonts-bodoni-star:Bodoni-06-Book`){Bodoni-06-Book}
++specimen(`fonts-bodoni-star:Bodoni-06-Fatface-Italic`){Bodoni-06-Fatface-Italic}
++specimen(`fonts-bodoni-star:Bodoni-06-Fatface`){Bodoni-06-Fatface}
++specimen(`fonts-bodoni-star:Bodoni-06-Medium-Italic`){Bodoni-06-Medium-Italic}
++specimen(`fonts-bodoni-star:Bodoni-06-Medium`){Bodoni-06-Medium}
++specimen(`fonts-bodoni-star:Bodoni-11-Bold-Italic`){Bodoni-11-Bold-Italic}
++specimen(`fonts-bodoni-star:Bodoni-11-Bold`){Bodoni-11-Bold}
++specimen(`fonts-bodoni-star:Bodoni-11-Book-Italic`){Bodoni-11-Book-Italic}
++specimen(`fonts-bodoni-star:Bodoni-11-Book`){Bodoni-11-Book}
++specimen(`fonts-bodoni-star:Bodoni-11-Fatface-Italic`){Bodoni-11-Fatface-Italic}
++specimen(`fonts-bodoni-star:Bodoni-11-Fatface`){Bodoni-11-Fatface}
++specimen(`fonts-bodoni-star:Bodoni-11-Medium-Italic`){Bodoni-11-Medium-Italic}
++specimen(`fonts-bodoni-star:Bodoni-11-Medium`){Bodoni-11-Medium}
++specimen(`fonts-bodoni-star:Bodoni-16-Bold-Italic`){Bodoni-16-Bold-Italic}
++specimen(`fonts-bodoni-star:Bodoni-16-Bold`){Bodoni-16-Bold}
++specimen(`fonts-bodoni-star:Bodoni-16-Book-Italic`){Bodoni-16-Book-Italic}
++specimen(`fonts-bodoni-star:Bodoni-16-Book`){Bodoni-16-Book}
++specimen(`fonts-bodoni-star:Bodoni-16-Fatface-Italic`){Bodoni-16-Fatface-Italic}
++specimen(`fonts-bodoni-star:Bodoni-16-Fatface`){Bodoni-16-Fatface}
++specimen(`fonts-bodoni-star:Bodoni-16-Medium-Italic`){Bodoni-16-Medium-Italic}
++specimen(`fonts-bodoni-star:Bodoni-16-Medium`){Bodoni-16-Medium}
++specimen(`fonts-bodoni-star:Bodoni-24-Bold-Italic`){Bodoni-24-Bold-Italic}
++specimen(`fonts-bodoni-star:Bodoni-24-Bold`){Bodoni-24-Bold}
++specimen(`fonts-bodoni-star:Bodoni-24-Book-Italic`){Bodoni-24-Book-Italic}
++specimen(`fonts-bodoni-star:Bodoni-24-Book`){Bodoni-24-Book}
++specimen(`fonts-bodoni-star:Bodoni-24-Fatface-Italic`){Bodoni-24-Fatface-Italic}
++specimen(`fonts-bodoni-star:Bodoni-24-Fatface`){Bodoni-24-Fatface}
++specimen(`fonts-bodoni-star:Bodoni-24-Medium-Italic`){Bodoni-24-Medium-Italic}
++specimen(`fonts-bodoni-star:Bodoni-24-Medium`){Bodoni-24-Medium}
++specimen(`fonts-bodoni-star:Bodoni-36-Bold-Italic`){Bodoni-36-Bold-Italic}
++specimen(`fonts-bodoni-star:Bodoni-36-Bold`){Bodoni-36-Bold}
++specimen(`fonts-bodoni-star:Bodoni-36-Book-Italic`){Bodoni-36-Book-Italic}
++specimen(`fonts-bodoni-star:Bodoni-36-Book`){Bodoni-36-Book}
++specimen(`fonts-bodoni-star:Bodoni-36-Fatface-Italic`){Bodoni-36-Fatface-Italic}
++specimen(`fonts-bodoni-star:Bodoni-36-Fatface`){Bodoni-36-Fatface}
++specimen(`fonts-bodoni-star:Bodoni-36-Medium-Italic`){Bodoni-36-Medium-Italic}
++specimen(`fonts-bodoni-star:Bodoni-36-Medium`){Bodoni-36-Medium}
++specimen(`fonts-bodoni-star:Bodoni-48-Bold-Italic`){Bodoni-48-Bold-Italic}
++specimen(`fonts-bodoni-star:Bodoni-48-Bold`){Bodoni-48-Bold}
++specimen(`fonts-bodoni-star:Bodoni-48-Book-Italic`){Bodoni-48-Book-Italic}
++specimen(`fonts-bodoni-star:Bodoni-48-Book`){Bodoni-48-Book}
++specimen(`fonts-bodoni-star:Bodoni-48-Fatface-Italic`){Bodoni-48-Fatface-Italic}
++specimen(`fonts-bodoni-star:Bodoni-48-Fatface`){Bodoni-48-Fatface}
++specimen(`fonts-bodoni-star:Bodoni-48-Medium-Italic`){Bodoni-48-Medium-Italic}
++specimen(`fonts-bodoni-star:Bodoni-48-Medium`){Bodoni-48-Medium}
++specimen(`fonts-bodoni-star:Bodoni-72-Bold-Italic`){Bodoni-72-Bold-Italic}
++specimen(`fonts-bodoni-star:Bodoni-72-Bold`){Bodoni-72-Bold}
++specimen(`fonts-bodoni-star:Bodoni-72-Book-Italic`){Bodoni-72-Book-Italic}
++specimen(`fonts-bodoni-star:Bodoni-72-Book`){Bodoni-72-Book}
++specimen(`fonts-bodoni-star:Bodoni-72-Fatface-Italic`){Bodoni-72-Fatface-Italic}
++specimen(`fonts-bodoni-star:Bodoni-72-Fatface`){Bodoni-72-Fatface}
++specimen(`fonts-bodoni-star:Bodoni-72-Medium-Italic`){Bodoni-72-Medium-Italic}
++specimen(`fonts-bodoni-star:Bodoni-72-Medium`){Bodoni-72-Medium}
++specimen(`fonts-bodoni-star:Bodoni-96-Bold-Italic`){Bodoni-96-Bold-Italic}
++specimen(`fonts-bodoni-star:Bodoni-96-Bold`){Bodoni-96-Bold}
++specimen(`fonts-bodoni-star:Bodoni-96-Book-Italic`){Bodoni-96-Book-Italic}
++specimen(`fonts-bodoni-star:Bodoni-96-Book`){Bodoni-96-Book}
++specimen(`fonts-bodoni-star:Bodoni-96-Fatface-Italic`){Bodoni-96-Fatface-Italic}
++specimen(`fonts-bodoni-star:Bodoni-96-Fatface`){Bodoni-96-Fatface}
++specimen(`fonts-bodoni-star:Bodoni-96-Medium-Italic`){Bodoni-96-Medium-Italic}
++specimen(`fonts-bodoni-star:Bodoni-96-Medium`){Bodoni-96-Medium}
+>
